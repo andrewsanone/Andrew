@@ -213,6 +213,8 @@ footer{border-top:1px solid var(--line);padding:30px 0;position:relative;z-index
   body{cursor:auto}
 }
 @media(max-width:640px){
+  #mobileMenu{gap:2px}
+  #mobileMenu a{padding:5px 10px}
   .hero{padding-top:140px;padding-bottom:170px}
   .hero h1{font-size:clamp(2.4rem,11vw,3.5rem)}
   .hero-tag{margin-bottom:26px}
@@ -222,6 +224,7 @@ footer{border-top:1px solid var(--line);padding:30px 0;position:relative;z-index
   .sec-head{flex-direction:column;align-items:flex-start;gap:12px}
   #contact .cta-row .btn{width:100%;justify-content:center}
   .socials{margin-top:36px}
+  .foot{flex-direction:column;justify-content:center;text-align:center;gap:7px}
 }
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.001s!important;transition-duration:.001s!important}
@@ -433,7 +436,7 @@ footer{border-top:1px solid var(--line);padding:30px 0;position:relative;z-index
   var lineBg=document.getElementById('lineBg');
   function buildLines(){
     lineBg.innerHTML='';
-    var count=8;
+    var count = innerWidth <= 640 ? 4 : 8;
     for(var i=0;i<count;i++){
       var l=document.createElement('div');
       l.className='line';
